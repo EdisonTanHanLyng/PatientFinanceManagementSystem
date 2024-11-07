@@ -1,0 +1,42 @@
+﻿@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+@{
+    ViewData["Title"] = "Document Generation";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/DocumentGeneration/preview.css" asp-append-version="true">
+    <title>Document Generation Page</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header div -->
+        <div class="info-bar">
+            <div id="file-path"><a id="info_link" href="/Mainmenu/Mainmenu">Home &nbsp</a> &gt; Document Generation Preview</div>
+            <div id="date-time">
+                <span id="date">Date: </span>
+                <span id="time">Time: </span>
+            </div>
+        </div>
+        <div class="content-wrapper">
+            <div class="document-wrapper">
+                <h2>Document</h2>
+                <div class="document-preview">
+                    <iframe id="pdfViewer" src="@ViewBag.PdfFilePath" style="width:100%; height:100%;" frameborder="0"></iframe>
+                </div>
+            </div>
+            <div class="button-div">
+                <button type="submit" class="download-button" id="download-button">Download</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="~/js/DocumentGeneration/preview.js"></script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+/* General reset for margin and padding */
+
+/* Header at the top of the page */
+.info-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 2% 1%;
+    font-size: 14px;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    height: 10vh;
+}
+
+#file-path {
+    font-weight: bold;
+}
+
+#date-time {
+    display: flex;
+    gap: 20px;
+}
+
+#info_link {
+    color: #FF3535;
+}
+
+@media (max-width: 600px) {
+    .info-bar {
+        height: 15vh;
+        padding: 4% 2%;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .info-bar {
+        height: 8vh;
+        padding: 1% 0.5%;
+        font-size: 16px;
+    }
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: 80px;
+    padding-right: 80px;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Page Title Header */
+.page-title {
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin-top: 10px;
+}
+
+/* Line that separates container and additional information */
+.separator-line {
+    border: 0 !important;
+    height: 2px !important;
+    background-color: #000000 !important;
+    margin: 20px 0 !important;
+    padding: 0 !important;
+}
+
+
+
+/* Add Reminder Content Header */
+.add-reminder-content-header {
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    margin-bottom: 10px;
+}
+
+
+
+/* Add Reminder Container  */
+.add-reminder-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.add-reminder-title {
+    width: 50%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+}
+
+.add-reminder-date, .add-reminder-time {
+    width: 20%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-right: 20px;
+    background-color: #ffffff;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+}
+
+/* hides calendar icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+/* hides clock icon */
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
+
+.add-reminder-priority {
+    width: 30%;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    background-color: #ffffff;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+}
+
+
+
+
+/* Add Reminder Info */
+.add-reminder-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    margin-bottom: 10px;
+}
+
+.add-reminder-description {
+    width: 40.25%;
+    height: 120px;
+    color: #000000;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+.add-reminder-email-content {
+    width: 34.25%;
+    height: 120px;
+    color: #000000;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    padding-left: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+}
+
+.add-reminder-patient-sponsor-button {
+    width: 10%;
+    background-color: #ffffff;
+    height: 40px;
+    color: #b3b3b3;
+    border: 2px solid #b3b3b3;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    padding-left: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+    .add-reminder-patient-button:hover {
+        background-color: #d0eaf7;
+        color: #000000;
+        border-color: #d0eaf7;
+    }
+
+    .add-reminder-sponsor-button:hover {
+        background-color: #ffedbd;
+        color: #000000;
+        border-color: #ffedbd;
+    }
+
+
+
+    .add-reminder-patient-button.active {
+        background-color: #d0eaf7;
+        color: #000000;
+        border-color: #d0eaf7;
+    }
+
+    .add-reminder-sponsor-button.active {
+        background-color: #ffedbd;
+        color: #000000;
+        border-color: #ffedbd;
+    }
+
+
+.reminder-boxes {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    min-height: 45vh;
+    max-height: 45vh;
+}
+
+
+/* Additional Information Section */
+.add-reminder-box {
+    margin-left: 0.5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    height: 15vh;
+    border: 1px solid #b3b3b3;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    background-color: #ffffff;
+    width: 98%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.add-reminder-icon {
+    width: 50px;
+    height: 50px;
+}
+
+
+/* Save & Upload */
+.add-reminder-save-and-upload-container {
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    width: 15vw;
+}
+
+.add-reminder-save-and-upload {
+    margin-top: 10%;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #7d1700;
+    border: none;
+}
+
+.reminder-box {
+    margin-left: 0.5%;
+    margin-bottom: 1%;
+    height: 15vh;
+    border: 1px solid #b3b3b3;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.4);
+    background-color: #ffffff;
+    width: 98%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: none;
+    border: none;
+}
+
+.reminder-content-grid {
+    margin-left: 1%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: left;
+    text-align: left;
+}
+
+/* Reminder created notification */
+.notification-bubble {
+    position: fixed;
+    text-align: center;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FFFFFF;
+    color: #000000;
+    width: 50%;
+    padding: 10px 20px;
+    border: 1px solid #B3B3B3;
+    border-radius: 10px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    font-weight: bold;
+}
+
+    .notification-bubble.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+
+#user-list li {
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+    #user-list li:hover {
+        background-color: #f1f1f1;
+    }
+
+/* Highlight selected user */
+.selected-user {
+    background-color: #d1e7ff;
+}
+
+
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 60vh;
+    width: 30vw;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.popup-header {
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 220%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+    .vertical-buttons button {
+        height: 7vh;
+        background-color: #ffffff;
+        border: 1px solid #B3B3B3;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        font-family: Arial, sans-serif;
+        font-size: 130%;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        margin-bottom: 10%;
+    }
+
+.horizontal-buttons {
+    position: absolute;
+    justify-content: center;
+    bottom: 5%;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    gap: 10%;
+}
+
+    .horizontal-buttons button {
+        height: 6vh;
+        background-color: #ffffff;
+        border: 1px solid #B3B3B3;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        font-family: Arial, sans-serif;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        width: 50%;
+        font-size: 130%;
+    }
+
+.select-patient-sponsor-button {
+    height: 7vh;
+    font-size: 120%;
+    width: 24%;
+    background-color: #ffffff;
+    border: 1px solid #B3B3B3;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.select-patient-sponsor-button:hover, .patient-select:hover, .sponsor-select:hover, .cancel-selection:hover, .confirm-selection:hover {
+    background-color: #e7e7e7;
+}
+
+
+.patient-select.active, .sponsor-select.active {
+    background-color: #e7e7e7;
+    color: #000000;
+    border-color: #d0eaf7;
+}

@@ -1,0 +1,106 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Main Page - Admin</title>
+    <link rel="stylesheet" href="~/Mainmenu.cshtml.css" asp-append-version="true" />
+</head>
+</html>
+
+<div class="mainbody">
+    <header class="header">
+        <p class="dashboard_text"> Dashboard </p>
+    </header>
+
+    <div class="maincontext">
+        <div class="left_context">
+            <div class="time_zone_section">
+                <div class="clock_zone">
+                    <div class="clock">
+                        <div class="clock_wrap">
+                            <span class="clock_hour"></span>
+                            <span class="clock_minute"></span>
+                            <span class="clock_second"></span>
+                            <span class="clock_red_dot"></span>
+                            <span class="clock_dot"></span>
+                            <span class="center_grey_dot"></span>
+                            <span class="left_grey_dot"></span>
+                            <span class="right_grey_dot"></span>
+                            <span class="bottom_grey_dot"></span>
+                        </div>
+                     </div>
+                </div>
+                <div class="date_display_zone">
+                    <div class="date_wrap">
+                        <div class="date_week_container"><span class="date_week"></span></div>
+                        <div class="date_display">
+                            <span class="date_day"></span>
+                            <span class="date_month"></span>
+                            <span class="date_gap"> , </span>
+                            <span class="date_year"> </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reminder_zone_section">
+                <div class="reminder_zone_text"> Reminder </div>
+                <div class="reminder_zone_wrap"> 
+                </div>
+            </div>
+        </div>
+        <div class="right_context">
+            <div class="quickAccess_zone_section">
+                <div class="quick_document_generation">
+                    <div class="document_image_wrap">
+                        <span class="material-symbols-outlined"> description </span>
+                        <span class="document_image_text"> Document Generate </span>
+                    </div>
+                </div>
+                <div class="quick_sponsor_information">
+                    <div class="sponsor_information_image_wrap">
+                        <span class="material-symbols-outlined"> crowdsource </span>
+                        <span class="sponsor_information_image_text"> Sponsors Information </span>
+                    </div>
+                </div>
+                <div class="quick_patients_information">
+                    <div class="patients_information_image_wrap">
+                        <span class="material-symbols-outlined"> group </span>
+                        <span class="patients_information_image_text"> Patients Information </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recent_patients_attemps_zone_section">
+                <span class="recent_patients_attempts_text"> </span>
+                <div class="recent_patients_zone_title">
+                    <div class="recent_patients_zone_Id"> Recipient Name </div>
+                    <div class="recent_patients_zone_name"> Recipient Email </div>
+                    <div class="recent_patients_zone_status"> Date </div>
+
+                </div>
+                <div class="quickAccess_zone_inner_section">
+                    <div class="quickAccess_zone_inner_section_Id">
+                        <span class="quickAccess_zone_inner_section_Id_span"> Loading... </span>
+                    </div>
+                    <div class="quickAccess_zone_inner_section_name">
+                        <span class="quickAccess_zone_inner_section_name_span"> Loading... </span>
+                    </div>
+                    <div class="quickAccess_zone_inner_section_status">
+                        <span class="quickAccess_zone_inner_section_status_span"> Loading... </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="~/js/Mainmenu.js" asp-append-version="true"></script>

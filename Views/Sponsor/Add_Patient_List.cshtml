@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewData["Title"] = "Add Patient List Page";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+<title>Add Patient List</title>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href="https://google.com">Home &nbsp</a> &gt; Recent Patient Attempt</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <div class="mainbody">
+        <div class="patientL-searchBar">
+            <form action="/patientfilter" method="post">
+                <input type="text" placeholder="Search" id="search" name="search">
+                <button type="submit">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+            </form>
+        </div>
+
+        <div class="list-display" id="list-display">
+        </div>
+    </div>
+</div>
+<script src="/js/Backup/Date_Time.js" asp-append-version="true"></script>
+<script src="/js/Sponsor_Page_Add_Patient_List.js" asp-append-version="true" defer></script>

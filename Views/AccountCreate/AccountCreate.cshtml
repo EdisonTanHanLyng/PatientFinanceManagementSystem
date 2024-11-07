@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "Account Create";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/account_create.css" asp-append-version="true">
+    <title>Account Create</title>
+</head>
+</html>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href='/Mainmenu/mainmenu'>Home</a>&nbsp;&gt; Account Create</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <form class="detail-container" id="accountForm" action="/accountdetail" method="post" enctype="multipart/form-data">
+        <div class="create_account_title">Create Account</div>
+        <div class="account-details">
+            <div class="account-credentials">
+                
+                <div class="in-credentials">
+                    <div class="error-package">
+                        @if (ViewBag.ErrorMessage != null)
+                        {
+                            <div class="error-message">
+                                @ViewBag.ErrorMessage
+                            </div>
+                        }
+                        <label class="label_account">Username</label>
+                        <input type="text" id="accname" name="accname" placeholder="Username" required>
+                    </div>
+                </div>
+                <div class="in-credentials">
+                    <select id="role" name="role" required>
+                        <option value="" disabled selected>Role</option>
+                        <option value="Admin">Admin</option>
+                        <option value="User">Staff</option>
+                    </select>
+                </div>
+                <div class="in-credentials">
+                    <label>Password</label>
+                    <input type="password" id="password" name="password" placeholder="Account Password" required>
+                </div>
+                <div class="requirements">
+                    Password must contain:
+                    <ul>
+                        <li id="length">At least 8 characters</li>
+                        <li id="uppercase">At least one uppercase letter</li>
+                        <li id="lowercase">At least one lowercase letter</li>
+                        <li id="digit">At least one digit</li>
+                        <li id="special">At least one special character</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pic-container">
+                <div class="pic-trash">
+                    <div class="pic-slot" id="profilePicContainer">
+                        <img src="~/Image/account_create/Person.png" alt="Profile Picture" id="profileImage">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-info">
+            <div class="user-details">
+                <div class="grid-input">
+                    <div class="in-details">
+                        <label>Account Name</label>
+                        <input type="text" id="username" name="username" placeholder="Account Name" required>
+                    </div>
+                    <div class="in-details">
+                        <label>Gender</label>
+                        <input type="text" id="gender" name="gender" placeholder="Gender" required>
+                    </div>
+                    <div class="in-details">
+                        <label>User ID</label>
+                        <input type="text" id="userid" name="userid" placeholder="User ID" required>
+                    </div>
+                    <div class="in-details">
+                        <label>Race</label>
+                        <input type="text" id="race" name="race" placeholder="Race" required>
+                    </div>
+                    <div class="in-details">
+                        <label>Tel</label>
+                        <input type="text" id="tel" name="tel" placeholder="Tel" required>
+                    </div>
+                </div>
+                <div class="address-container">
+                    <div class="address">
+                        <label class="label_address">Address</label>
+                        <input type="text" id="address" name="address" placeholder="Address" required>
+                    </div>
+                </div>
+            </div>
+            <div class="description-container">
+                <div class="description">
+                    <label class="label_description">Description</label>
+                    <textarea id="description" name="description" placeholder="Description" required></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="button-div">
+                <button type="submit" class="create-button">Create</button>
+                <div class="trash-btn">
+                    <span> Cancel </span>
+                </div>
+        </div>
+    </form>
+
+</div>
+
+<script src="~/js/account_create.js" asp-append-version="true"></script>

@@ -1,0 +1,304 @@
+/* Main page container */
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    height: 95%;
+    margin-right: 2%;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+/* Header at the top of the page */
+.info-bar {
+    display: flex;
+    width: 100%;
+    height: 3%;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 1vw;
+    color: #000000;
+    margin-top: 1%;
+}
+
+#file-path {
+    display: flex;
+    font-weight: bold;
+    width: 20%;
+    height: 100%;
+}
+
+#info_link {
+    color: #FF3535;
+}
+
+#date-time {
+    display: flex;
+    gap: 10%;
+    width: 40%;
+    height: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    justify-content: end;
+}
+
+@media (max-width: 600px) {
+    .info-bar {
+        height: 15vh;
+        padding: 4% 2%;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .info-bar {
+        height: 8vh;
+        padding: 1% 0.5%;
+        font-size: 16px;
+    }
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.detail-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.patient-details {
+    width: 30%
+}
+.reference-details {
+    width:30%
+}
+
+.my-group {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+}
+
+.day {
+    width: 30%;
+    margin-right: auto;
+}
+
+.month {
+    width: 30%;
+    margin: auto;
+}
+
+.year {
+    width: 30%;
+    margin-left: auto;
+}
+
+.detail-group {
+    width: 90%;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#addBtn, #rmvBtn {
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    margin-left: .3vw;
+    width: 3%;
+    padding: .4vw;
+    border-radius: 10px;
+    border: none;
+    background-color: #8a0000;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: .85vw;
+}
+
+.address textarea {
+    top: 1vh;
+    text-align: left;
+    vertical-align: top;
+    width: 90%;
+    height: 12.7vh;
+    padding: .5vw;
+    border: 1px solid #00000070;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.table-wrapper {
+    border-collapse: collapse;
+    width: 100%;
+    height: 58vh;
+    overflow-y: auto;
+    outline: 1px solid #000000;
+}
+
+.custom-table {
+    width: 100%;
+}
+
+    .custom-table th, .custom-table td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .custom-table th {
+        background-color: #f2f2f2;
+    }
+
+    .custom-table td:last-child {
+        text-align: right;
+    }
+
+    .custom-table .total-row {
+        font-weight: bold;
+    }
+
+        .custom-table .total-row td {
+            border-top: 2px solid black;
+        }
+
+    .custom-table input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: none; /* Remove input border */
+        text-align: center;
+    }
+        .custom-table input[type="number"] {
+            text-align: right; /* Align the number to the right */
+        }
+
+    .custom-table td:nth-child(3) {
+        width: 20%;
+    }
+    .custom-table td:nth-child(1) {
+        width: 5%; 
+    }
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"] {
+    appearance: none;
+}
+
+    .custom-table .total-row td {
+        border-top: 2px solid black;
+    }
+
+.generate-excel-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+    .generate-excel-wrapper button {
+        width: 10%;
+        padding: .8vw;
+        border-radius: 10px;
+        border: none;
+        background-color: #8a0000;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: .85vw;
+    }
+button:hover {
+    background-color: darkred;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    height: 45vh;
+    width: 30vw;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3%;
+    margin-left: 5%;
+}
+
+.popup-header {
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    font-size: 220%;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vertical-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+    .vertical-buttons button {
+        height: 7vh;
+        background-color: #ffffff;
+        border: 1px solid #B3B3B3;
+        border-radius: 10px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+        font-family: Arial, sans-serif;
+        font-size: 130%;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        margin-bottom: 10%;
+    }
+
+.search {
+    margin-top: auto;
+    margin-left: auto;
+}
+
+#searchBtn {
+    width: 100%;
+    padding: .8vw;
+    border-radius: 10px;
+    border: none;
+    background-color: #8a0000;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: .6vw;
+}

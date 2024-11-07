@@ -1,0 +1,48 @@
+﻿@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] Reminder Log</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/reminderLog.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+</html>
+
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href='/Mainmenu/mainmenu'>Home</a>&nbsp;&gt; Recent Patient Attempt</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <div class="main_contents">
+        <section class="search_container">
+            <div class="search_bar">
+                <div class="search_bar_text_container">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search" class="search_bar_text" id="patient_attempt-search-input">
+                    <input type="date" class="search_bar_date" id="patient_attempt-date-input">
+                </div>
+            </div>
+        </section>
+        <div class="content_body">
+        </div>
+
+        <div class="pagination_container">
+            <span class="material-symbols-outlined left">chevron_left</span>
+            <div class="pagination_pages">
+            </div>
+            <span class="material-symbols-outlined right">chevron_right</span>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/reminderLog.js" asp-append-version="true"></script>

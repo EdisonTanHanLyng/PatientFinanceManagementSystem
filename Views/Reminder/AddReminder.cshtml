@@ -1,0 +1,109 @@
+﻿@{
+    ViewData["Title"] = "Add Reminder";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/add_reminder.css" asp-append-version="true" />
+<title>Add Reminder</title>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path">
+            <a id="info_link" href="/Home/Index">Home</a> &gt;
+            <a id="info_link" href="/Reminder/Reminder">Reminder</a> &gt
+            <a>Add Reminder</a>
+        </div>
+
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <!-- Display Page Title -->
+    <div class="page-header">
+        <div class="page-title"><h1><strong>Add Reminder</strong></h1></div>
+        <div class="add-reminder-save-and-upload-container">
+            <button class="add-reminder-save-and-upload" onclick="saveAndUpload()"><strong>Save & Upload</strong></button>
+        </div>
+    </div>
+
+
+
+    <!-- Add Reminder Container -->
+    <div class="add-reminder-container">
+        <div class="add-reminder-content-header">
+            <strong>Reminder information</strong>
+        </div>
+
+        <div class="add-reminder-header">
+            <input type="text" placeholder="Title: " class="add-reminder-title" id="input-title">
+
+            <input type="text" placeholder="Date:" class="add-reminder-date" id="input-date" onfocus="this.type='date'; this.value=''" onblur="if(!this.value) this.type='text'">
+
+            <input type="text" placeholder="Time:" class="add-reminder-time" id="input-time" onfocus="this.type='time'; this.value=''" onblur="if(!this.value) this.type='text'" onchange="checkTime(this)">
+
+            <select class="add-reminder-priority" id="input-priority">
+                <option value="high-priority" selected>High</option>
+                <option value="medium-priority">Medium</option>
+                <option value="low-priority">Low</option>
+            </select>
+        </div>
+
+        <div class="add-reminder-info">
+            <textarea placeholder="Description: " class="add-reminder-description" id="input-description"></textarea>
+            <textarea placeholder="Email Content: " class="add-reminder-email-content" id="input-email-content"></textarea>
+            <button class="select-patient-sponsor-button" onclick="openPopup()"><strong>Select Patient/Sponsor</strong></button>
+        </div>
+    </div>
+
+
+
+    <!-- Line that separates add reminder container and additional information -->
+    <hr class="separator-line">
+
+
+
+    <!-- Add Reminder Additional Information -->
+    <div class="add-reminder-additional-information">
+        <div class="add-reminder-content-header">
+            <strong>Selected Patients/Sponsors</strong>
+        </div>
+
+
+
+        <!-- Reminder List -->
+        <div class="reminder-boxes">
+
+        </div>
+    </div>
+
+    <div class="popup" id="select-patient-sponsor-popup" style="display: none;">
+        <div class="popup-container">
+            <div class="popup-header"><strong>Select Patient or Sponsor</strong></div>
+
+            <div class="button-container">
+                <div class="vertical-buttons">
+                    <button type="button" class="patient-select" id="patient-select" onclick="selectOption('patient', this)"><strong>Patient</strong></button>
+
+                    <button type="button" class="sponsor-select" id="sponsor-select" onclick="selectOption('sponsor', this)"><strong>Sponsor</strong></button>
+                </div>
+
+                <div class="horizontal-buttons">
+                    <button type="button" class="cancel-selection" onclick="closePopup()"><strong>Close</strong></button>
+
+                    <button type="button" class="confirm-selection" onclick="confirmSelection()"><strong>Confirm</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<script src="~/js/add_reminder.js" asp-append-version="true"></script>

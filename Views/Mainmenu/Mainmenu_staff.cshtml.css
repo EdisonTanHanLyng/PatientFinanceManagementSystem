@@ -1,0 +1,621 @@
+﻿.mainbody {
+    height: 92%;
+    width: 84%;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 8%;
+    width: 100%;
+}
+
+.dashboard_text {
+    margin-top: auto;
+    margin-bottom: 1%;
+    width: 20%;
+    height: auto;
+    font-family: 'Kaisei HarunoUmi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.7vw;
+    color: #000000;
+}
+
+.maincontext {
+    display: flex;
+    height: 92%;
+    width: 100%;
+    flex-direction: row;
+}
+
+.left_context {
+    height: 100%;
+    width: 30%;
+}
+
+.time_zone_section {
+    display: flex;
+    width: 100%;
+    height: 25%;
+}
+
+.clock_zone {
+    display: flex;
+    width: 40%;
+    height: 91%;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    box-sizing: border-box;
+}
+
+.clock {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    font-family: "Montserrat";
+    border: 0.2vw solid #F1F2F7;
+    background: linear-gradient(134.17deg, #E6E9EF 4.98%, #E6E9EF 4.99%, #EEF0F5 94.88%);
+    box-shadow: 1vw 1vw 0.93vw -0.46vw rgba(166, 180, 200, 0.57);
+}
+
+.clock_wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: linear-gradient(90deg, #ECEEF3 0%, #F1F2F7 100%);
+    box-shadow: inset -0.93vw -0.93vw 2.34vw rgba(255, 255, 255, 0.65), inset 0.54vw 0.546875vw 0.625vw rgba(166, 180, 200, 0.52), inset 0.78vw 0.859vw 2.34vw -0.078vw rgba(166, 180, 200, 0.71);
+}
+
+.clock_hour, .clock_minute, .clock_second {
+    position: absolute;
+    background: black;
+    transform-origin: bottom center;
+    z-index: 1;
+}
+
+.clock_hour {
+    height: 30%;
+    top: 20%;
+    left: 50%;
+    border: 0.1vw solid #646E82;
+    border-radius: 1vw;
+}
+
+.clock_minute {
+    height: 40%;
+    top: 10%;
+    left: 50%;
+    border: 0.1vw solid #646E82;
+    border-radius: 1vw;
+}
+
+.clock_second {
+    height: 45%;
+    top: 5%;
+    left: 50%;
+    border: 0.1vw solid #FF4B3E;
+    border-radius: 1vw;
+}
+
+.clock_red_dot {
+    position: absolute;
+    width: 4%;
+    height: 4%;
+    background: #FD382D;
+    border: 0.1vw solid #FD382D;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}
+
+.clock_dot {
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    background: #1b1b1b;
+    border: 0.2vw solid #1b1b1b;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center_grey_dot {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 5%;
+    background: rgba(166, 180, 200, 1.0);
+    height: 1vh;
+    border: 0.1vw solid rgba(166, 180, 200, 1.0);
+    border-radius: 1vw;
+}
+
+.left_grey_dot {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    background: rgba(166, 180, 200, 1.0);
+    height: 1vh;
+    border: 0.1vw solid rgba(166, 180, 200, 1.0);
+    border-radius: 1vw;
+    transform: rotate(90deg);
+}
+
+.right_grey_dot {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    background: rgba(166, 180, 200, 1.0);
+    height: 1vh;
+    border: 0.1vw solid rgba(166, 180, 200, 1.0);
+    border-radius: 1vw;
+    transform: rotate(90deg);
+}
+
+.bottom_grey_dot {
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 5%;
+    background: rgba(166, 180, 200, 1.0);
+    height: 1vh;
+    border: 0.1vw solid rgba(166, 180, 200, 1.0);
+    border-radius: 1vw;
+}
+
+.date_display_zone {
+    display: flex;
+    width: 50%;
+    height: 65%;
+    margin: 5% auto 0;
+    background: #EDEFF5;
+    border-radius: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0.2vw 0.2vw rgba(0, 0, 0, 0.1);
+    padding: 4%;
+}
+
+.date_wrap {
+    display: block;
+    text-align: center;
+}
+
+.date_week_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.date_week {
+    font-family: 'Kaisei HarunoUmi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2vw;
+    color: #000000;
+}
+
+.date_display {
+    font-family: 'Kaisei HarunoUmi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.1vw;
+    color: #000000;
+    display: flex;
+}
+
+.date_day, .date_gap, .date_month {
+    padding-right: 1%;
+}
+
+.reminder_zone_section {
+    width: 100%;
+    height: 74.5%;
+    background: #FFFFFF;
+    border: 0.1vw solid #DDDDDD;
+    box-shadow: 0 0.25vw 0.25vw rgba(0, 0, 0, 0.25);
+    border-radius: 1vw;
+    box-sizing: border-box;
+    margin-top: 2%;
+}
+
+    .reminder_zone_section:hover {
+        cursor: pointer;
+    }
+
+.reminder_zone_text {
+    width: 100%;
+    height: 5%;
+    font-family: 'Kaisei HarunoUmi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.reminder_zone_wrap {
+    width: 100%;
+    height: 93%;
+    flex-direction: column;
+}
+
+.reminder_zone_inner_date {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    margin-top: 1%;
+    margin-bottom: auto;
+}
+
+    .reminder_zone_inner_date span {
+        width: 100%;
+        height: 100%;
+        font-size: 1.1vw;
+        font-weight: bold;
+        margin-left: 2%;
+    }
+
+.reminder_zone_inner_inform {
+    width: 100%;
+    height: 23%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2%;
+}
+
+.reminder_zone_inner_inform_date {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+    .reminder_zone_inner_inform_date span {
+        font-size: 1vw;
+        font-weight: bold;
+        text-align: right;
+    }
+
+.reminder_zone_inner_inform_gap {
+    height: auto;
+    border: 0.15vw solid #EAEAEA;
+    border-radius: 1vw;
+    margin: 1% 2% 2% 2%;
+}
+
+.reminder_zone_inner_inform_remarks {
+    height: 100%;
+    width: 82%;
+}
+
+.reminder_zone_inner_inform_remarks_upper {
+    display: flex;
+    height: 25%;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: auto;
+    box-sizing: border-box;
+}
+
+    .reminder_zone_inner_inform_remarks_upper span {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 1.2;
+        color: #000000;
+        margin-left: 2%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+.reminder_zone_inner_inform_remarks_upper_userTag {
+    display: flex;
+    width: 33%;
+    height: 100%;
+    background: #B2E3F4;
+    border-radius: 1vw;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+
+    .reminder_zone_inner_inform_remarks_upper_userTag span {
+        width: 100%;
+        height: 100%;
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        color: #000000;
+        text-align: center;
+        justify-content: center;
+        align-content: center;
+    }
+
+
+.reminder_zone_inner_inform_remarks_lower {
+    display: flex;
+    height: 75%;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+    .reminder_zone_inner_inform_remarks_lower span {
+        font-size: 1vw;
+        font-family: Arial, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        color: #000000;
+        padding: 0.7% 0% 0% 3%;
+    }
+
+.right_context {
+    height: 100%;
+    width: 65%;
+    margin-right: 4%;
+    margin-left: auto;
+}
+
+.recent_patients_attemps_zone_section {
+    display: flex;
+    width: 100%;
+    height: 71%;
+    border: 0.1vw solid #DFDFDF;
+    border-radius: 1vw;
+    cursor: pointer;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.recent_patients_attempts_text {
+    width: 100%;
+    height: 5%;
+    font-family: 'Kaisei HarunoUmi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.2vw;
+    line-height: 29px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    margin-left: 2%;
+    margin-top: 1%;
+}
+
+.recent_patients_zone_title {
+    display: flex;
+    width: 96%;
+    height: 7%;
+    border: 0.15vw #000000 solid;
+    margin-top: 1%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.recent_patients_zone_Id {
+    width: auto;
+    height: 100%;
+    font-size: 1.2vw;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 1%;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.recent_patients_zone_name {
+    width: auto;
+    height: 100%;
+    font-size: 1.2vw;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-top: auto;
+    margin-bottom: 0;
+    margin-right: 39%;
+}
+
+.recent_patients_zone_status {
+    width: auto;
+    height: 100%;
+    font-size: 1.2vw;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    margin-right: 7.8%;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.quickAccess_zone_section {
+    display: flex;
+    width: 100%;
+    height: 27%;
+    box-sizing: border-box;
+    margin-bottom: 2%;
+    flex-direction: row;
+}
+
+.material-symbols-outlined {
+    display: flex;
+    font-variation-settings: 'FILL' 0, 'wght' 150, 'GRAD' 0, 'opsz' 24;
+    font-size: 8vw;
+    color: #434343;
+}
+
+.quickAccess_zone_inner_section {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    margin-top: 1%;
+}
+
+.quickAccess_zone_inner_section_Id {
+    display: flex;
+    width: 25%;
+    height: 100%;
+    margin-left: 2%;
+    margin-right: auto;
+}
+
+.quickAccess_zone_inner_section_Id_span {
+    font-size: 1.1vw;
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.quickAccess_zone_inner_section_name {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    margin-right: 5.7%;
+}
+
+.quickAccess_zone_inner_section_name_span {
+    font-size: 1.1vw;
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+.quickAccess_zone_inner_section_status {
+    display: flex;
+    width: 9%;
+    height: 100%;
+    margin-right: 7%;
+    text-align: center;
+}
+
+.quickAccess_zone_inner_section_status_span {
+    font-size: 1.1vw;
+    font-family: Arial, sans-serif;
+    margin-top: auto;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #094B71;
+}
+
+.quick_document_generation {
+    width: 27%;
+    height: 100%;
+    border: 0.1vw solid #EEEEEE;
+    border-radius: 1vw;
+    box-sizing: border-box;
+    margin-left: 0;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    filter: drop-shadow(0vw 0.1vw 0.1vw rgba(0, 0, 0, 0.15));
+}
+
+.quick_sponsor_information {
+    width: 27%;
+    height: 100%;
+    border: 0.1vw solid #EEEEEE;
+    border-radius: 1vw;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    filter: drop-shadow(0vw 0.1vw 0.1vw rgba(0, 0, 0, 0.15));
+}
+
+.quick_patients_information {
+    display: flex;
+    width: 27%;
+    height: 100%;
+    border: 0.1vw solid #EEEEEE;
+    border-radius: 1vw;
+    margin-right: 0;
+    align-content: center;
+    justify-content: center;
+    filter: drop-shadow(0vw 0.1vw 0.1vw rgba(0, 0, 0, 0.15));
+    box-sizing: border-box;
+}
+
+.document_image_wrap,
+.sponsor_information_image_wrap,
+.patients_information_image_wrap {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.document_image,
+.sponsor_information_image,
+.patients_information_image {
+    width: 60%;
+    height: 70%;
+    margin-top: 3%;
+}
+
+.document_image_text,
+.sponsor_information_image_text,
+.patients_information_image_text {
+    width: 100%;
+    height: 12%;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1vw;
+    text-align: center;
+    color: #000000;
+    margin-top: 4%;
+}
+
+.quick_document_generation:hover,
+.quick_sponsor_information:hover,
+.quick_patients_information:hover {
+    transform: scale(1.05);
+    border: 2px solid;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.quick_document_generation:active,
+.quick_sponsor_information:active,
+.quick_patients_information:active {
+    transform: scale(1.03);
+    background-color: rgba(138, 0, 0, 0.3);
+}

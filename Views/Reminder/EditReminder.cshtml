@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Edit Reminder";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/edit_reminder.css" asp-append-version="true" />
+<title>Edit Reminder</title>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path">
+            <a id="info_link" href="/Home/Index">Home</a> &gt;
+            <a id="info_link" href="/Reminder/Reminder">Reminder</a> &gt
+            <a>Edit Reminder</a>
+        </div>
+
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <!-- Display Page Title -->
+    <div class="page-header">
+        <div class="page-title"><h1><strong>Edit Reminder</strong></h1></div>
+        <div class="add-reminder-save-and-upload-container">
+            <button class="add-reminder-save-and-upload" onclick="saveAndUpload()"><strong>Save & Upload</strong></button>
+        </div>
+    </div>
+
+
+
+    <!-- Add Reminder Container -->
+    <div class="add-reminder-container">
+        <div class="add-reminder-content-header" id="add-reminder-content-header">
+            <strong>Reminder information</strong>
+        </div>
+
+        <div class="add-reminder-header">
+            <input type="text" placeholder="Title: " class="add-reminder-title" id="input-title">
+
+            <input type="text" placeholder="Date:" class="add-reminder-date" id="input-date" onfocus="this.type='date'; this.value=''" onblur="if(!this.value) this.type='text'">
+
+            <input type="text" placeholder="Time:" class="add-reminder-time" id="input-time" onfocus="this.type='time'; this.value=''" onblur="if(!this.value) this.type='text'" onchange="checkTime(this)">
+
+            <select class="add-reminder-priority" id="input-priority">
+                <option value="high-priority" selected>High</option>
+                <option value="medium-priority">Medium</option>
+                <option value="low-priority">Low</option>
+            </select>
+        </div>
+
+        <div class="add-reminder-info">
+            <textarea placeholder="Description: " class="add-reminder-description" id="input-description"></textarea>
+        </div>
+        <div class="add-reminder-email">
+            <textarea placeholder="Email Content: " class="add-reminder-email-content" id="input-email-content"></textarea>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+
+<script src="~/js/edit_reminder.js" asp-append-version="true"></script>

@@ -1,0 +1,75 @@
+﻿@{
+    ViewData["Title"] = "Document Generation";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Document Generation</title>
+    <link rel="stylesheet" href="~/css/DocumentGeneration/document_generation.css" asp-append-version="true" />
+</head>
+</html>
+
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href="/Mainmenu/Mainmenu">Home &nbsp</a> &gt; Document Generation</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <!-- Icons -->
+    <div class="document_container">
+        <div class="icon-container">
+            <div class="icon-item">
+                <div class="document-a">
+                    <img src="~/Image/document_generation/document_a.png" alt="Document A">
+                    <p>STEC</p>
+                </div>
+            </div>
+            <div class="icon-item">
+                <div class="document-b">
+                    <img src="~/Image/document_generation/document_b.png" alt="Document B">
+                    <p>IPPKL</p>
+                </div>
+            </div>
+            <div class="icon-item">
+                <div class="document-c">
+                    <img src="~/Image/document_generation/document_c.png" alt="Document C">
+                    <p>JPIIE</p>
+                </div>
+            </div>
+            <div class="icon-item">
+                <div class="document-d">
+                    <img src="~/Image/document_generation/document_d.png" alt="Document D">
+                    <p>LHDN</p>
+                </div>
+            </div>
+            <div class="icon-item">
+                <div class="document-e">
+                    <img src="~/Image/document_generation/document_e.png" alt="Document E">
+                    <p>SOCSO</p>
+                </div>
+            </div>
+            <div class="icon-item">
+                <div class="document-f">
+                    <img src="~/Image/document_generation/custom_doc.png" alt="Custom Document">
+                    <p>Invoice</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+</div>
+
+<script src="~/js/DocumentGeneration/document_generation.js" asp-append-version="true"></script>

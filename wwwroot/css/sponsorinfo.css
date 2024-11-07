@@ -1,0 +1,776 @@
+﻿.page-wrapper { /* Parent container of the whole page */
+margin-top: 1%;
+margin-left: 4%;
+margin-right: 2%;
+position: fixed;
+/*border: dashed;*/
+height: 95%;
+width: 94%;
+overflow-y: hidden;
+overflow-x: hidden;
+}
+
+.info-bar {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #ffffff;
+margin-bottom: 2%;
+margin-left: 1%;
+margin-right: 1%;
+color: #000000;
+font-family: Arial, sans-serif;
+}
+
+#file-path {
+font-weight: bold;
+}
+
+#info_link {
+color: #FF3535;
+}
+
+#date-time {
+display: flex;
+gap: 20px;
+}
+
+
+
+/* Code is adopted from Ariel's Patient Information Page */
+div.sponsor-info-body {
+margin-left: auto;
+margin-right: auto;
+}
+
+div.sponsor-info-summary-container {
+position: center;
+margin-left: 0%;
+margin-right: 0%;
+margin-top: 0.5%;
+height: fit-content;
+overflow: visible;
+align-items: center;
+z-index: 0;
+}
+
+div.sponsor-info-summary {
+transition: 1s;
+margin-left: 1%;
+margin-right: 1%;
+margin-top: 0%;
+position: center;
+height: 28vh;
+background: #EFEFEF;
+border: none;
+border-radius: 12px;
+box-shadow: 2px 2px 2px grey;
+display: grid;
+grid-template-columns: 80% 20%;
+overflow: hidden;
+z-index: 2;
+}
+
+.sponsor-info-summary-collapse-button {
+margin-top: 0%;
+width: 200px;
+margin-left: 43%;
+position: center;
+height: 20px;
+border: none;
+border-bottom-right-radius: 12px;
+border-bottom-left-radius: 12px;
+box-shadow: 2px 2px 2px grey;
+background-color: #EFEFEF;
+z-index: 1;
+}
+
+.material-symbols-outlined {
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24
+}
+
+.sponsor-info-summary-collapse-button .material-symbols-outlined {
+font-stretch: wider;
+color: grey;
+}
+
+.sponsor-info-summary-collapse-button:hover {
+transition: 0.5s;
+background-color: #D2D1D1;
+height: 25px;
+}
+
+div.sponsor-info-summary.minimise {
+height: 1vh;
+}
+
+div.sponsor-info-left h2 {
+margin-top: 1.5%;
+margin-left: 2%;
+font-weight: 700;
+}
+
+div.sponsor-info-left p {
+margin-top: 1.5%;
+margin-left: 5%;
+}
+
+
+div.sponsor-info-right {
+display: grid;
+grid-template-columns: 80% 20%;
+}
+
+div.sponsor-info-profile-picture {
+margin-left: 0%;
+margin-top: 5%;
+height: 100%;
+align-content: center;
+}
+
+/* Profile image container */
+div.sponsor-info-profile-picture span {
+    height: 90%;
+    width: 90%;
+    border-radius: 50%;
+    border: 1px solid #898989;
+    display: inline-block;
+    background-color: white;
+    overflow: hidden;
+}
+
+div.sponsor-info-icons {
+height: 100%;
+display: grid;
+grid-template-rows: 50% 50%;
+}
+
+/* Edit Button */
+div.sponsor-info-icons-top {
+align-content: start;
+}
+
+div.sponsor-info-icons-top button {
+    border: none;
+    background-color: transparent;
+}
+
+div.sponsor-info-icons-top .material-symbols-outlined {
+    font-size: 40px;
+    margin-top: 15%;
+    margin-left: 35%;
+    margin-right: auto;
+}
+
+/* Delete Button */
+div.sponsor-info-icons-bottom {
+align-content: end;
+}
+
+div.sponsor-info-icons-bottom button {
+    border: none;
+    background-color: transparent;
+}
+
+div.sponsor-info-icons-bottom .material-symbols-outlined {
+    font-size: 40px;
+    margin-top: 15%;
+    margin-left: 35%;
+    margin-right: auto;
+}
+
+/* Overview Section */
+
+div.sponsor-info-overview {
+width: 100%;
+margin-top: 0%;
+height: fit-content;
+/*background-color: azure;*/ /*PlaceHolder colour*/
+}
+
+/* Overview Tabs */
+div.sponsor-info-overview {
+overflow: hidden;
+}
+
+div.sponsor-info-overview ol {
+    list-style-type: none;
+    margin: 0%;
+    margin-left: -0.5%;
+    overflow-wrap: break-word;
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+    align-content: baseline;
+}
+
+    div.sponsor-info-overview ol li {
+        float: left;
+        margin-right: 2%;
+    }
+
+        div.sponsor-info-overview ol li button {
+            transition: 0.5s;
+            border: none;
+            background-color: transparent;
+            border-bottom: solid grey;
+            color: grey;
+        }
+
+            div.sponsor-info-overview ol li button:hover {
+                padding-inline: 15px;
+                border-bottom: solid black;
+                color: black;
+            }
+
+button.sponsor-info-tab1.selected {
+border-bottom: solid black;
+color: black;
+}
+
+button.sponsor-info-tab2.selected {
+border-bottom: solid black;
+color: black;
+}
+
+/* Overview Content */
+
+.sponsor-info-overview-content {
+transition: 0.7s;
+width: 100%;
+margin-top: 0%;
+display: grid;
+grid-template-columns: 100% 0%;
+}
+
+.sponsor-info-overview-content.page2 {
+    grid-template-columns: 0% 100%;
+}
+
+/* Page 1 - History Overview*/
+div.sponsor-info-overview-page1 {
+margin-left: 1%;
+margin-right: 1%;
+margin-top: 1%;
+height: fit-content;
+transition: 0.2s;
+}
+
+div.sponsor-info-overview-page1.unactive {
+    opacity: 0%;
+}
+
+.sponsor-info-overview-history-bar {
+    display: flex;
+    width: 100%;
+    grid-template-columns: 20% 80%;
+    margin-left: 0%;
+    margin-right: 1%;
+    column-gap: 1%;
+}
+
+/*the add entry + button*/
+.sponsor-info-overview-add-entry {
+transition: 0.7s;
+width: 100%;
+height: fit-content;
+position: center;
+padding-top: 8px;
+padding-bottom: 8px;
+align-content: center;
+border: 1px solid black;
+border-radius: 15px;
+overflow: hidden;
+background-color: transparent;
+}
+
+.sponsor-info-overview-add-entry:hover {
+    background-color: #EFEFEF;
+}
+
+.sponsor-info-overview-add-entry:active {
+    transition: 0.2s;
+    margin-top: 0.5%;
+}
+
+.sponsor-info-overview-add-entry .material-symbols-outlined {
+    position: center;
+    margin-top: 1.5%;
+    font-size: 30px;
+    margin-bottom: 0%;
+}
+
+.sponsor-info-search-container {
+    display: flex;
+    width: 100%;
+    gap: 0.5%;
+}
+
+div.sponsor-info-history-bar-search-bar {
+    display: flex;
+    width: 82vw;
+    height: fit-content;
+    margin-left: 0.2%;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    background-color: white;
+    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #C2C0C0;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px #C2C0C0;
+}
+
+.sponsor-info-overview-date-input {
+    width: 10vw;
+    height: 6vh;
+    margin-left: 0.2%;
+    margin-right: 0%;
+    margin-bottom: 1%;
+    background-color: white;
+    padding: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 1px solid #C2C0C0;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px #C2C0C0;
+}
+
+    /*the span containing the search glass icon*/
+    div.sponsor-info-history-bar-search-bar .material-symbols-outlined {
+        font-size: 40px;
+        color: grey;
+    }
+
+/*document search bar*/
+div.sponsor-info-history-bar-search-bar input {
+    border: none;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 1%;
+    font-size: 17px;
+}
+
+    div.sponsor-info-history-bar-search-bar input:focus {
+        outline: none;
+    }
+
+/*the ol containing the history overview*/
+.sponsor-info-overview-entry-list {
+    transition: 1s;
+    list-style-type: none;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0%;
+    min-height: 40vh;
+    max-height: 40vh;
+    overflow-x: hidden;
+    z-index: 1;
+    scroll-behavior: smooth;
+}
+
+    .sponsor-info-overview-entry-list.expand {
+        max-height: 67vh;
+    }
+
+.sponsor-info-overview-entry-list.expand {
+    max-height: 67vh;
+}
+
+.sponsor-info-overview-entry-list,
+.sponsor-info-overview-entry-list.expand {
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+}
+
+    /*Each patient overview entry item*/
+    .sponsor-info-overview-entry-list li {
+        margin-left: -1.5%;
+        margin-right: 0.5%;
+        z-index: 0;
+        height: 25vh;
+        display: grid;
+        width: 99.5%;
+        grid-template-rows: 8% 92%;
+        background-color: white;
+        border: 1px solid grey;
+        border-radius: 20px;
+        padding-top: 0.5%;
+        padding-bottom: 1.5%;
+        margin-bottom: 10px;
+        transition: 0.5s;
+    }
+
+
+        /*Name header*/
+        .sponsor-info-overview-entry-list li div:nth-child(1) {
+            margin-left: 2%;
+        }
+
+/*The content container*/
+.sponsor-info-overview-entry-list li div:nth-child(2) {
+    padding-top: 0.5%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    white-space: nowrap;
+}
+
+/*The data label for every row in every table*/
+.sponsor-info-overview-entry-list li td:nth-child(odd) {
+    font-style: italic;
+}
+
+/*The displayed data for every row in every table*/
+.sponsor-info-overview-entry-list li td:nth-child(even) {
+    font-weight: bold;
+    border-left: 1px solid #D0D0D0;
+    padding-left: 5%;
+}
+
+/*Every table in the li*/
+.sponsor-info-overview-entry-list li div table {
+    margin-left: 5%;
+    margin-right: 1%;
+}
+
+
+/* Page 2 - Document Overview */
+
+/*the document overview page*/
+div.sponsor-info-overview-page2 {
+margin-left: 1%;
+margin-right: 1%;
+margin-top: 1%;
+height: 10%;
+transition: 0.2s;
+}
+
+div.sponsor-info-overview-page2.unactive {
+    opacity: 0%;
+}
+
+/*the div containing the upload button and search bar*/
+div.sponsor-info-overview-document-bar {
+display: grid;
+grid-template-columns: 20% 80%;
+margin-left: 0%;
+margin-right: 0%;
+column-gap: 1%;
+margin-bottom: 1%;
+}
+
+.SponsorInfo-DocBar-loading {
+    transition: 0.5s;
+    background-color: #EE4B2B;
+    height: 4%;
+    margin-left: 0.4%;
+    width: 0%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    opacity: 0;
+}
+
+.SponsorInfo-DocBar-loading.progress {
+    opacity: 1;
+    width: 69%;
+    transition: opacity 0.5s;
+    transition: width 20s;
+}
+
+/*upload document button*/
+.sponsor-info-overview-document-bar-upload-button {
+    height: fit-content;
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 10px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    text-align: center;
+    color: black;
+    font-weight: 600;
+    font-size: 17px;
+    text-decoration: none;
+    background-color: #FFFFFF;
+    border: 1px solid #C2C0C0;
+    border-radius: 12px;
+    box-shadow: 2px 2px 2px #C2C0C0;
+    transition: 0.2s;
+}
+
+.sponsor-info-overview-document-bar-upload-button:hover {
+    background-color: #EFEFEF;
+}
+
+.sponsor-info-overview-document-bar-upload-button:active {
+    background-color: #EFEFEF;
+    margin-top: 2%;
+    box-shadow: none;
+}
+
+/*the search bar block*/
+div.sponsor-info-document-bar-search-bar {
+display: grid;
+grid-template-columns: 5% 95%;
+height: fit-content;
+margin-left: 0%;
+margin-right: 0%;
+background-color: white;
+padding: 10px;
+padding-top: 8px;
+padding-bottom: 8px;
+border: 1px solid #C2C0C0;
+border-radius: 12px;
+box-shadow: 2px 2px 2px #C2C0C0;
+overflow: hidden;
+}
+
+/*the span containing the search glass icon*/
+div.sponsor-info-document-bar-search-bar .material-symbols-outlined {
+    margin-left: 5%;
+    font-size: 40px;
+    color: grey;
+}
+
+/*document search bar*/
+div.sponsor-info-document-bar-search-bar input {
+    border: none;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 0%;
+    margin-right: 1%;
+    font-size: 17px;
+}
+
+    div.sponsor-info-document-bar-search-bar input:focus {
+        outline: none;
+    }
+
+/*the ol containing the list of documents*/
+.sponsor-info-overview-document-list {
+    transition: 1s;
+    margin-left: 0%;
+    margin-right: 0%;
+    height: 40vh;
+    min-height: 40vh;
+    max-height: 67vh;
+    list-style-type: none;
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+    align-content: baseline;
+    background-color: white;
+    scroll-behavior: smooth;
+}
+
+.sponsor-info-overview-document-list.expand {
+    height: 67vh;
+}
+
+/*
+    .sponsor-info-overview-document-list,
+    .sponsor-info-overview-document-list.expand {
+        overflow-y: scroll !important;
+        overflow-x: hidden;
+    }
+*/
+
+/*The list item*/
+.sponsor-info-overview-document-list li {
+    transition: 0.5s;
+    display: grid;
+    grid-template-rows: 5% 90% 5%;
+    margin-left: -1%;
+    height: 45vh;
+    width: 99%;
+    background-color: white;
+    float: left;
+    overflow: hidden;
+}
+
+    .sponsor-info-overview-document-list li.editingMod {
+        z-index: 1;
+        position: relative;
+        backdrop-filter: blur(-10px);
+        height: fit-content;
+    }
+
+    .sponsor-info-overview-document-list li.minimise {
+        background-color: #EFEFEF;
+        height: 5vh;
+        border: 2px solid lightgrey;
+        border-radius: 15px;
+        margin-bottom: 0.5%;
+    }
+
+    /*Date and Doc name per list item*/
+    .sponsor-info-overview-document-list li p {
+        font-weight: bold;
+        margin-left: 0.5%;
+    }
+
+    /*The content container div per list item*/
+    .sponsor-info-overview-document-list li div {
+        transition: 0.5s;
+        display: grid;
+        grid-template-columns: 20% 80%;
+        margin: 5px;
+    }
+
+        .sponsor-info-overview-document-list li div.minimise {
+            opacity: 0%;
+            height: 0%;
+        }
+
+    /*The mimisation button for each doc list item*/
+    .sponsor-info-overview-document-list li button {
+        margin-top: -1%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 10vw;
+        height: 3vh;
+        border-bottom: 2px solid grey;
+        border-left: none;
+        border-right: none;
+        color: grey;
+        border-top: none;
+        padding-top: 0.1%;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        background-image: linear-gradient(white, #D9D9D9);
+    }
+
+        .sponsor-info-overview-document-list li button.minimise {
+            margin-top: -2.5%;
+            z-index: 5;
+        }
+
+    /*the left side div - document preview*/
+    .sponsor-info-overview-document-list li div div:nth-child(1) {
+        display: initial;
+        background-color: #D9D9D9;
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        height: 40vh;
+        transition: 0.5s;
+        overflow: hidden;
+    }
+
+        .sponsor-info-overview-document-list li div div:nth-child(1) .material-symbols-outlined {
+            margin-top: 40%;
+            font-size: 5vw;
+        }
+
+        .sponsor-info-overview-document-list li div div:nth-child(1).editingMod .material-symbols-outlined {
+            display: initial;
+            margin-top: 40%;
+            font-size: 5vw;
+        }
+
+/* The Document preview itself */
+    .sponsor-info-overview-document-list li div iframe {
+        width: 100%;
+        height: 100%;
+        overflow-y: hidden;
+    }
+
+    /*The right side div - remarks area*/
+    .sponsor-info-overview-document-list li div div:nth-child(2) {
+        display: grid;
+        height: 35vh;
+        grid-template-columns: none;
+        grid-template-rows: 6% 84% 10%;
+        background-color: white;
+    }
+
+/* Editable remarks section */
+        .sponsor-info-overview-document-list li div div:nth-child(2).editingMod {
+            display: grid;
+            height: 35vh;
+            grid-template-columns: none;
+            grid-template-rows: 26% 60% 14%;
+            background-color: white;
+        }
+
+            .sponsor-info-overview-document-list li div div:nth-child(2).editingMod table td:nth-child(even) {
+                padding-right: 2%;
+                left: 10vw;
+            }
+
+            .sponsor-info-overview-document-list li div div:nth-child(2).editingMod table td:nth-child(odd) {
+                padding-left: 0%;
+                width: 10%;
+            }
+
+            /* The container div for the editable remarks*/
+            .sponsor-info-overview-document-list li div div:nth-child(2).editingMod div:nth-child(2) {
+                display: initial;
+                height: 16vh;
+                grid-template-columns: none;
+                grid-template-rows: none;
+                background-color: white;
+                border: none;
+                overflow: unset;
+            }
+
+/* The editable textarea */
+.sponsor-info-overview-document-list li div div:nth-child(2).editingMod div textarea {
+    height: 15vh;
+    width: 100%;
+    background-color: white;
+}
+
+/* Div containing the edit operation buttons*/
+.sponsor-info-overview-document-list li div div:nth-child(2) div:nth-child(3) {
+    display: grid;
+    height: 1vh;
+    width: 30%;
+    margin-top: 0%;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: none;
+    gap: 1%;
+    background-color: white;
+    border: none;
+    overflow: unset;
+}
+/*Save Button*/
+.sponsor-info-overview-document-list li div div:nth-child(2).editingMod div:nth-child(3) button:nth-child(1) {
+    margin-left: 1%;
+    margin-top: 0%;
+}
+
+/*Cancel Button*/
+.sponsor-info-overview-document-list li div div:nth-child(2).editingMod div:nth-child(3) button:nth-child(2) {
+    margin-left: 1%;
+    margin-top: 0%;
+    background-color: grey;
+}
+
+        /*Remarks box*/
+.sponsor-info-overview-document-list li div div:nth-child(2) div {
+    height: 25vh;
+    overflow-y: scroll;
+    border: 1px solid black;
+    background-color: white;
+}
+
+        /*Edit Remarks Button*/
+.sponsor-info-overview-document-list li div div:nth-child(2) button {
+    width: 100%;
+    margin-top: -2.5%;
+    height: 5vh;
+    background-image: none;
+    background-color: #8A0000;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding-top: 0px;
+    transition: 0.5s;
+}
+
+.hidden {
+    display: none;
+}

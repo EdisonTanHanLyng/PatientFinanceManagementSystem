@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Document Generation Selection";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/DocumentGeneration/invoice.css" asp-append-version="true" />
+
+
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href="/Mainmenu/Mainmenu">Home</a> &gt; Select Patient</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+    <div class="detail-wrapper">
+        <div class="patient-details" id="patientDetails">
+            <div class="detail-group">
+                <label for="sponsor">Sponsor</label>
+                <select id="sponsor" name="sponsor" class="form-control" required>
+                    <option value="" disabled selected>Select a sponsor</option>
+                </select>
+            </div>
+            <div class="address">
+                <textarea id="address" name="address" rows="5" cols="50" placeholder="Address"></textarea>
+            </div>
+        </div>
+        <div class="reference-details" id="patientDetails">
+            <div class="detail-group">
+                <label for="contactPerson">Contact Person</label>
+                <input type="text" id="contactPerson" name="contactPerson" class="form-control" />
+            </div>
+            <div class="detail-group">
+                <label for="telNum">Tel Number</label>
+                <input type="text" id="telNum" name="telNum" class="form-control" />
+            </div>
+            <div class="detail-group">
+                <label for="faxNum">Fax Number</label>
+                <input type="text" id="faxNum" name="faxNum" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button id="rmvBtn" class="rmvBtn">-</button>
+        <button id="addBtn" class="addBtn">+</button>
+    </div>
+    <div class="table-wrapper">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Bil</th>
+                    <th>Description</th>
+                    <th>Qty</th>
+                    <th>UOM</th>
+                    <th>U/Price (RM)</th>
+                    <th>Total (RM)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><input type="text" name="description@(1)" /></td>
+                    <td><input type="number" class="no-spinner" name="qty@(1)" placeholder="0" min="0" /></td>
+                    <td><input type="text" name="uom@(1)" /></td>
+                    <td><input type="number" step="0.01" name="uPrice@(1)" placeholder="0.00" min="0" /></td>
+                    <td id="totalBayaran">0.00</td>
+                </tr>
+
+                <tr class="total-row">
+                    <td colspan="5">Total (RM)</td>
+                    <td id="totalPrice">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <div class="generate-pdf-wrapper">
+        <button id="generatePdfButton" class="generate-pdf-btn">Generate PDF</button>
+    </div>
+</div>
+
+
+<script src="~/js/DocumentGeneration/invoice.js" asp-append-version="true"></script>

@@ -1,0 +1,228 @@
+/* Main page container */
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    height: 95%;
+    margin-right: 2%;
+    margin-left: auto;
+    margin-top: 0;
+}
+
+/* Header at the top of the page */
+.info-bar {
+    display: flex;
+    width: 100%;
+    height: 3%;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 1vw;
+    color: #000000;
+    margin-top: 1%;
+}
+
+#file-path {
+    display: flex;
+    font-weight: bold;
+    width: 20%;
+    height: 100%;
+}
+
+#info_link {
+    color: #FF3535;
+}
+
+#date-time {
+    display: flex;
+    gap: 10%;
+    width: 40%;
+    height: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    justify-content: end;
+}
+
+@media (max-width: 600px) {
+    .info-bar {
+        height: 15vh;
+        padding: 4% 2%;
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .info-bar {
+        height: 8vh;
+        padding: 1% 0.5%;
+        font-size: 16px;
+    }
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-left: 80px;
+    padding-right: 80px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+.detail-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.patient-details {
+    width: 30%;
+}
+.address textarea {
+    top: 1vh;
+    text-align: left;
+    vertical-align: top;
+    width: 90%;
+    height: 12.7vh;
+    padding: .5vw;
+    border: 1px solid #00000070;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+    position: relative;
+    resize: none;
+    box-sizing: border-box;
+}
+
+.reference-details {
+    width: 30%;
+}
+
+.detail-group {
+    width: 90%;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+}
+#addBtn, #rmvBtn {
+    margin-top: .5vh;
+    margin-bottom: .5vh;
+    margin-left: .3vw;
+    width: 3%;
+    padding: .4vw;
+    border-radius: 10px;
+    border: none;
+    background-color: #8a0000;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: .85vw;
+}
+
+
+
+.table-wrapper {
+    border-collapse: collapse;
+    width: 100%;
+    height: 55vh;
+    overflow-y: auto;
+    outline: 1px solid #000000;
+}
+
+.table {
+    width: 100%;
+}
+
+    .table th, .table td {
+        border: 1px solid black;
+        padding: 10px;
+        text-align: center;
+    }
+
+        .table td:nth-child(2) {
+            width: 60%; /* More space for Description */
+        }
+
+        .table th:nth-child(3),
+        .table th:nth-child(4),
+        .table td:nth-child(5),
+        .table td:nth-child(6) {
+            width: 10%;
+        }
+
+    .table th {
+        background-color: #f2f2f2;
+    }
+
+    .table .total-row {
+        font-weight: bold
+    }
+
+        .table .total-row td {
+            border-top: 2px solid black;
+            text-align: center;
+        }
+
+    .table input {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        border: none;
+        text-align: center;
+    }
+
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+    -webkit-appearance: none; 
+    margin: 0;
+}
+
+.no-spinner {
+    -moz-appearance: textfield;
+    appearance: none;
+}
+
+    .table td[id^="totalBayaran"] {
+        text-align: right;
+    }
+    .table td[id^="totalPrice"] {
+        text-align: right;
+    }
+
+    .table .total-row td:first-child {
+        text-align: center;
+    }
+
+    .table .total-row td {
+        border-top: 2px solid black;
+    }
+
+.black {
+    background-color: black;
+}
+
+.generate-pdf-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vh;
+}
+
+    .generate-pdf-wrapper button {
+        width: 10%;
+        padding: .8vw;
+        border-radius: 10px;
+        border: none;
+        background-color: #8a0000;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: .85vw;
+    }
+
+button:hover {
+    background-color: darkred;
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.8);
+}

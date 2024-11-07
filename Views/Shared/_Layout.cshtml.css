@@ -1,0 +1,451 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+a.navbar-brand {
+    #FFFFFF-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+a {
+    color: #0077cc;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    height: 5.3%;
+    width: 55%;
+    box-sizing: border-box;
+    bottom: 0;
+    left: auto;
+    right: 22%;
+}
+
+.footer_container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.logo_container {
+    height: 100%;
+    width: 45%;
+    align-items: flex-end;
+    display: flex;
+}
+
+.curtin_logo {
+    width: 40%;
+    height: 85%;
+    margin-right: 2%;
+}
+
+.red_cresent_logo {
+    width: 53%;
+    height: 85%;
+}
+
+.copyright_container {
+    display: flex;
+    height: 90%;
+    width: 75%;
+    align-items: flex-start;
+    text-align: center;
+    margin-top: auto;
+    flex-direction: column;
+}
+
+.copyright_text {
+    width: 100%;
+    height: 50%;
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.8vw;
+    line-height: 1.5;
+    color: #000000;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+
+.sidebar_body_default {
+    position: fixed;
+    width: 2.8%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #8A0000;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s ease, width 0.5s ease;
+    cursor: pointer;
+}
+
+    .sidebar_body_default div {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        cursor: pointer;
+    }
+        .sidebar_body_default div > *,
+        .sidebar_body div > * {
+            transition: opacity 0.3s ease;
+        }
+
+.sidebar_container:hover .sidebar_body_default div > * {
+    opacity: 0;
+}
+
+.sidebar_container:hover .sidebar_body div > * {
+    opacity: 1;
+}
+.material-symbols-outlined.fronticonAcc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    color: #FFFFFF;
+    background-color: #360707;
+    font-size: 2vw;
+    width: 2.3vw;
+    height: 4.5vh;
+    border-radius: 50%;
+    margin-top: 70%;
+    margin-left: 9%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar_body {
+    display: none;
+    position: absolute;
+    box-sizing: border-box;
+    width: 14.5%;
+    height: 100%;
+    background: #8A0000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    transition: width 0.5s ease;
+    top: 0;
+    left: 0;
+}
+
+.sidemenu {
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 10%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar_inner_list {
+    display: none;
+    list-style: none;
+    padding: 0px;
+    border-left: 1px solid #FFFFFF;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    width: 94.5%;
+}
+
+    .sidebar_inner_list li {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 1%;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+    }
+
+        .sidebar_inner_list li:hover {
+            color: #FFFFFF;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transform: translateX(5px);
+        }
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 1, 'wght' 250, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+    color: #FFFFFF;
+    font-size: 2vw;
+    display: inline-flex; 
+}
+
+    .material-symbols-outlined.fronticonHome {
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+        color: #FFFFFF; /* Set color to #FFFFFF */
+        font-size: 2vw;
+        display: inline-flex; /* Ensures the width and height settings apply */
+        margin-top: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .material-symbols-outlined.fronticon {
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+        color: #FFFFFF; /* Set color to #FFFFFF */
+        font-size: 2vw;
+        display: inline-flex; /* Ensures the width and height settings apply */
+        margin-top: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .material-symbols-outlined.fronticonLogout {
+        font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+        color: #FFFFFF; /* Set color to #FFFFFF */
+        font-size: 1.8vw;
+        display: inline-flex; /* Ensures the width and height settings apply */
+        margin-top: auto;
+        margin-bottom: 6%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .material-symbols-outlined.default {
+        font-variation-settings: 'FILL' 1, 'wght' 250, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+        color: #FFFFFF; 
+        font-size: 2vw;
+        display: inline-flex; 
+        margin-right: 0.5%;
+        margin-left: auto;
+    }
+
+    .material-symbols-outlined.icon-small {
+        font-variation-settings: 'FILL' 1, 'wght' 240, 'GRAD' 0, 'opsz' 24; /* 'FILL' set to 1 */
+        color: #FFFFFF; /* Set color to #FFFFFF */
+        font-size: 1.3vw;
+        display: inline-flex; /* Ensures the width and height settings apply */
+        transition: transform 0.3s ease; /* Add transition for transform property */
+        margin: auto auto auto 2%;
+    }
+
+.sidebar_body_personal-acc { 
+    width: 94%;
+    height: 4.4%;
+    margin-top: 16%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.40);
+    border-radius: 5px;
+}
+
+.sidebar_body_personal-acc_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+    margin-right: 23%;
+}
+
+.sidebar_body_home {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_home_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_account {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_account_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_create_account_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_management_account_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_document {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_document_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_patient {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_patient_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_sponsor {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_sponsor_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_reminder {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_reminder_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_backup {
+    width: 94%;
+    height: 4.5vh;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.sidebar_body_backup_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.9vw;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.sidebar_body_logout {
+    position: absolute;
+    display: flex;
+    width: 41%;
+    height: auto;
+    bottom: 0;
+    left: 1%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar_body_logout_text {
+    font-family: Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9vw;
+    color: #FFFFFF;
+}
+
+.sidebar_body_backup:hover,
+.sidebar_body_reminder:hover,
+.sidebar_body_sponsor:hover,
+.sidebar_body_patient:hover,
+.sidebar_body_document:hover,
+.sidebar_body_account:hover,
+.sidebar_body_personal-acc:hover,
+.sidebar_body_home:hover,
+.sidebar_body_logout:hover,
+.sidebar_body_close-sidebar:hover {
+    cursor: pointer;
+    background: rgba(22, 21, 21, 0.67);
+    border-radius: 5px;
+}

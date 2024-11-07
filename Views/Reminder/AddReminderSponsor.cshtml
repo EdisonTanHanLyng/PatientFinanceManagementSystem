@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Add Sponsor Reminder";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/add_reminder_patient.css" asp-append-version="true" />
+<title>Add Reminder Sponsor</title>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path">
+            <a id="info_link" href="/Home/Index">Home</a> &gt;
+            <a id="info_link" href="/Reminder/Reminder">Reminder</a> &gt;
+            <a id="info_link" href="/Reminder/AddReminder">Add Reminder</a> &gt;
+            <a> Add Sponsor Reminder</a>
+        </div>
+
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+
+
+    <!-- Container for both button and search bar -->
+    <div class="action-bar">
+        <!-- Search bar -->
+        <div class="search-container">
+            <input type="text" placeholder="Search" class="reminder-search-field-input" id="reminder-search-field-input">
+            <select class="reminder-search-sponsor" id="reminder-search-sponsor">
+                <option value="type-none" selected>None</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- Loading display -->
+    <div class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>Loading Sponsors...</p>
+    </div>
+
+
+    <!-- Reminder list -->
+    <div class="add-reminder-patient-boxes">
+    </div>
+
+    <div class="add-reminder-save-and-upload-container">
+        <button class="add-reminder-select-all" onclick="selectAllVisibleSponsors()"><strong>Select All</strong></button>
+        <button class="add-reminder-save-and-upload" onclick="saveAndUpload()"><strong>Save & Upload</strong></button>
+    </div>
+
+</div>
+
+
+
+
+<script src="~/js/add_reminder_sponsor.js" asp-append-version="true"></script>

@@ -1,0 +1,117 @@
+* {
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    margin: 0;
+}
+
+body {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+
+/* Header styling */
+th {
+    border-top: 1px solid black !important;
+    border-bottom: 1px solid black !important;
+}
+
+/* Remove borders from table rows */
+td {
+    border: none;
+}
+
+/* Optionally center-align the table */
+table {
+    margin: 0 auto;
+}
+
+.invoice-header {
+    width: 100%;
+}
+
+.address {
+    text-align: left;
+}
+
+.invoice-details p {
+    text-align: right;
+    padding-top: 8px;
+}
+
+.address p {
+    padding-top: 8px;
+}
+
+.invoice-title {
+    margin-top: 5px;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Added styles for new classes */
+.centered {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.right-align-value {
+    border: 1px solid black;
+    text-align: right;
+}
+
+.border-top {
+    border-top: 1px solid black !important;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.signature-table {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.signature-cell {
+    width: 30%;
+    text-align: center;
+}
+
+.empty-cell {
+    width: 40%;
+}
+
+.signature-line {
+    border: none;
+    border-top: 1px solid black !important;
+}
+
+.total-table td {
+    padding: 0;
+    margin: 0;
+    padding-left: 5px;
+}
+

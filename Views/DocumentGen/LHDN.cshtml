@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Document Generation Selection";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/DocumentGeneration/lhdn.css" asp-append-version="true" />
+
+
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path"><a id="info_link" href="/Mainmenu/Mainmenu">Home</a> &gt; Select Patient</div>
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+    <div class="detail-wrapper">
+        <div class="patient-details" id="patientDetails">
+            <div class="detail-group">
+                <label for="namaPesakit">Nama Pesakit</label>
+                <input type="text" id="namaPesakit" name="namaPesakit" class="form-control" onfocus="openPopup()" required />
+            </div>
+            <div class="detail-group">
+                <label for="noKadPengenalan">No. Kad Pengenalan</label>
+                <input type="text" id="noKadPengenalan" name="noKadPengenalan" class="form-control" required />
+            </div>
+            <div class="detail-group">
+                <label for="noRujukanTuan">No. Rujukan Tuan</label>
+                <input type="text" id="noRujukanTuan" name="noRujukanTuan" class="form-control" />
+            </div>
+        </div>
+        <div class="reference-details" id="patientDetails">
+            <div class="my-group">
+                <div class="month">
+                    <label for="month">Month</label>
+                    <select id="month" name="month" class="form-control">
+                        <option value="" disabled selected>Select Month</option>
+                    </select>
+                </div>
+                <div class="year">
+                    <label for="year">Year</label>
+                    <select id="year" name="year" class="form-control">
+                        <option value="" disabled selected>Select Year</option>
+                    </select>
+                </div>
+                <div class="search">
+                    <button id="searchBtn" class="searchBtn" onclick="searchDate()">Search</button>
+                </div>
+            </div>
+            <div class="detail-group">
+                <label for="noRujukanKami">No. Rujukan Kami</label>
+                <input type="text" id="noRujukanKami" name="noRujukanKami" class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="button-wrapper">
+        <button id="editBtn" class="editBtn" onclick="openPrice()">Edit</button>
+        <button id="fillBtn" class="fillBtn">Fill</button>
+        <label style="margin: auto 0">Pricing:</label>
+    </div>
+    <div class="table-wrapper">
+        <input type="hidden" id="patientID" name="patientID">
+        <table class="custom-table">
+            <thead>
+                <tr>
+                    <th>Bil</th>
+                    <th>Tarikh Rawatan</th>
+                    <th>Kos Rawatan ( RM )</th>
+                    <th>Kos Erysaa ( RM )</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Example rows -->
+                @for (int i = 1; i <= 14; i++)
+                {
+                    <tr>
+                        <td>@i</td>
+                        <td><input type="text" name="tarikhRawatan@(i)" /></td>
+                        <td><input type="number" name="kosRawatan@(i)" placeholder="0.00" min="0"/></td>
+                        <td><input type="number" name="kosSuntikan@(i)" placeholder="0.00" min="0"/></td>
+                    </tr>
+                }
+                <tr class="total-row">
+                    <td colspan="2">Jumlah Individu</td>
+                    <td id="totalRawatan">0.00</td>
+                    <td id="totalSuntikan">0.00</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="3">Jumlah Keseluruhan (RM)</td>
+                    <td id="totalKos">0.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+
+    <div class="generate-excel-wrapper">
+        <button id="generateExcelButton" class="generate-excel-btn">Generate Excel</button>
+    </div>
+
+    <div class="popup" id="select-patient-sponsor-popup" style="display: none;">
+        <div class="popup-container">
+            <div class="popup-header"><strong>Select Patient</strong></div>
+
+            <div class="button-container">
+                <div class="vertical-buttons">
+                    <button type="button" class="confirm-selection" onclick="confirmSelection()"><strong>Search</strong></button>
+
+                    <button type="button" class="cancel-selection" onclick="closePopup()"><strong>Close</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="price-popup" id="pricePopup" style="display: none;">
+        <div class="price-container">
+            <div class="price-header"><strong>Edit Prices</strong></div>
+            <div class="pricing-group">
+                <div class="prices-container">
+                    <div class="pRawatan">
+                        <label for="pRawatan">Kos Rawatan</label>
+                        <input type="number" id="pRawatan" name="pRawatan" />
+                    </div>
+                    <div class="pSuntikan">
+                        <label for="pSuntikan">Kos Suntikan</label>
+                        <input type="number" id="pSuntikan" name="pSuntikan" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="button-container">
+                <div class="vertical-buttons">
+                    <button type="button" class="confirm-selection" onclick="updatePrice()"><strong>Save</strong></button>
+
+                    <button type="button" class="cancel-selection" onclick="closePrice()"><strong>Close</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/DocumentGeneration/lhdn.js" asp-append-version="true"></script>

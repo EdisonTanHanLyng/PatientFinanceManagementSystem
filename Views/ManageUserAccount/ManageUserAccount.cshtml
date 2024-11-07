@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Manage User Account";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Manage User Account</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.17/signalr.min.js"></script>
+    <link rel="stylesheet" href="~/css/manage_user_account.css" asp-append-version="true" />
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Header div -->
+        <div class="info-bar">
+            <div id="file-path">
+                <a id="info_link" href="/MainMenu/MainMenu">Home </a> &gt;
+                <a id="info_link" href="/ManageAccount/ManageAccount"> Manage Account </a> &gt; Manage User Account
+            </div>
+            <div id="date-time">
+                <span id="date">Date: </span>
+                <span id="time">Time: </span>
+            </div>
+        </div>
+        <!-- Form for managing user account details -->
+        <form class="detail-container" id="manageUserAccountForm" action="/ManageUserAccount/UpdateUserDetails" method="post" enctype="multipart/form-data">
+            <div class="manage-user-title">
+               Manage User Account
+            </div>
+
+            <div class="account-details">
+                <div class="account-credentials">
+                    <div class="in-credentials">
+                        <div class="error-package">
+                            @if (ViewBag.ErrorMessage != null)
+                            {
+                                <div class="error-message">
+                                    @ViewBag.ErrorMessage
+                                </div>
+                            }
+                            <label class="label_account">Username</label>
+                            <input type="text" id="accname" name="Name" value="@Model.Name" placeholder="Username" readonly required>
+                        </div>
+                    </div>
+                    <div class="in-credentials">
+                        <label class="label_role">Role</label>
+                        <select id="role" name="Role" data-selected-role="@Model.Role" required>
+                            <option value="" disabled selected>Role</option>
+                            <option value="Admin">Admin</option>
+                            <option value="User">Staff</option>
+                        </select>
+                    </div>
+                    <div class="in-credentials">
+                        <label>Password</label>
+                        <input type="password" id="password" name="Password" placeholder="New Password">
+                    </div>
+                    <div class="requirements" id="passwordRequirements" style="display: none;">
+                        <ul>
+                            <li id="length">At least 8 characters</li>
+                            <li id="uppercase">At least one uppercase letter</li>
+                            <li id="lowercase">At least one lowercase letter</li>
+                            <li id="digit">At least one digit</li>
+                            <li id="special">At least one special character</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+                <div class="pic-container">
+                    <div class="pic-trash">
+                        <div class="pic-slot" id="profilePicContainer">
+                            <img src="~/Image/account_create/Person.png" alt="Profile Picture" id="profileImage">
+                           
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="user-info">
+                <div class="user-details">
+                    <div class="grid-input">
+                        <div class="in-details">
+                            <label>Account Name</label>
+                            <input type="text" id="username" name="Username" value="@Model.Username" placeholder="Account Name" readonly required>
+                        </div>
+                        <div class="in-details">
+                            <label>Gender</label>
+                            <input type="text" id="gender" name="Gender" value="@Model.Gender" placeholder="Gender" required>
+                        </div>
+                        <div class="in-details">
+                            <label>User ID</label>
+                            <input type="text" id="userid" name="UserId" value="@Model.UserId" placeholder="User ID" readonly required>
+                        </div>
+                        <div class="in-details">
+                            <label>Race</label>
+                            <input type="text" id="race" name="Race" value="@Model.Race" placeholder="Race" required>
+                        </div>
+                        <div class="in-details">
+                            <label>Tel</label>
+                            <input type="text" id="tel" name="Contact" value="@Model.Contact" placeholder="Tel" required>
+                        </div>
+                    </div>
+                    <div class="address-container">
+                        <div class="address">
+                            <label class="label_address">Address</label>
+                            <input type="text" id="address" name="Address" value="@Model.Address" placeholder="Location" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="description-container">
+                    <div class="description">
+                        <label class="label_description">Description</label>
+                        <textarea id="description" name="Description" placeholder="Description" required>@Model.Description</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="button-div">
+                    <button type="submit" class="update-button">Update</button>
+
+                
+                    <button type="button" class="remove-button" id="removeUserButton" data-userid="@Model.UserId">Remove User</button>
+                
+            </div>
+        </form>
+
+        <script src="~/js/ManageUserAccount.js" asp-append-version="true"></script>
+    </div>
+</body>
+</html>

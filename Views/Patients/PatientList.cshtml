@@ -1,0 +1,97 @@
+﻿@using PFMS_MI04.Models;
+@using PFMS_MI04.Models.Patients;
+@{
+    //string dateLongForm = ViewBag.DateLongForm;
+    string searchStr = ViewBag.SearchString;
+    List<PatientListItem> pList = ViewBag.PatientListItems;
+    ViewData["Title"] = "Patient List";
+}
+@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+}
+
+<link rel="stylesheet" href="~/css/Patients/PatientList.css" asp-append-version="true" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title>Patient List</title>
+<div class="patientL-mainContainer">
+    <div class="patientL-pageHeader">
+        <div class="patientL-leftHead">
+            <p>
+                <a href="/Mainmenu/Mainmenu">
+                    <u>Home</u>
+                </a> > 
+                <b> Patients </b>
+            </p>
+        </div>
+        <div class="patientL-rightHead">
+            <p>
+                <b>Date: </b> <p id='date'></p>
+                <b>Time: </b> <p id='time'></p>
+            </p> 
+        </div>
+    </div>
+    <div class="patientL-body">
+        <div class="patientL-topBar">
+            <!--<a class="patientL-createBtn" href="/Home/Index">
+                Create New Patient
+            </a>-->
+            <div class="patientL-SearchBar-loading">
+                <!-- Empty Div -->
+            </div>
+            <div class="patientL-searchBar">
+                <button class="patientL-SearchBtn">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </button>
+                <input type="text" placeholder="Search By Name" id="search" name="search" value="@searchStr">
+                <button class="patientL-advSearchBtn">
+                    <span class="material-symbols-outlined">
+                        patient_list
+                    </span>
+                </button>
+            </div>
+            <div class="patientL-expandedSearch">
+                <div>
+                    <!-- Dialysis Schedule -->
+                    @* <p>Dialysis Schedule: </p> *@
+                    <select id="dialSche" name="dialSche" placeholder="Scheduling">
+                    </select>
+                </div>
+                <div>
+                    <!-- Status -->
+                    @* <p>Status:</p> *@
+                    <select id="searchStatus" name="searchStatus" placeholder="Status">
+                    </select>
+                </div>
+                <div>
+                    <!-- Race -->
+                    @* <p>Status:</p> *@
+                    <input type="text" id="searchRace" name="searchRace" placeholder="Race--" value="">
+                </div>
+                <div>
+                    <!-- Tel -->
+                    @* <p>Tel:</p> *@
+                    <input type="tel" id="searchTel" name="searchTel" placeholder="Tel--" value="">
+                </div>
+                <div>
+                    <!-- NRIC/ID -->
+                    @* <p>ID:</p> *@
+                    <input type="text" id="searchPID" name="searchPID" placeholder="Patient ID/NRIC--" value="">
+                </div>
+                <div>
+                    <!-- Sponsor -->
+                    @* <p>Sponsor:</p> *@
+                    <select id="searchSpons" name="searchSpons" placeholder="Sponsor">
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="patientL-listContainer">
+            <ol class="patientL-list">
+                
+            </ol>
+        </div>
+    </div>
+    <script src="~/js/Patients/PatientList.js" asp-append-version="true" ></script>
+</div>

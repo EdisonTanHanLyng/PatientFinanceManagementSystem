@@ -1,0 +1,117 @@
+﻿@{
+    Layout = ViewBag.Layout ?? "_Layout_staff"; // Use the layout set in the controller, or default to "_Layout"
+    ViewData["Title"] = "Sponsor Info Page";
+}
+<link rel="stylesheet" href="~/css/sponsorinfo.css" asp-append-version="true" />
+<title>Sponsor Info</title>
+<div class="page-wrapper">
+    <!-- Header div -->
+    <div class="info-bar">
+        <div id="file-path">
+            <a id="info_link" href="/Mainmenu/Mainmenu">Home</a> &gt;
+            <a id="info_link" href="/SponsorsList/SponsorList">Sponsors</a> &gt
+            <a>Sponsor Information</a>
+        </div>
+
+        <div id="date-time">
+            <span id="date">Date: </span>
+            <span id="time">Time: </span>
+        </div>
+    </div>
+
+    <!-- Code is adopted from Ariel's Patient Information Page -->
+
+    <div class="sponsor-info-body">
+        <div class="sponsor-info-summary-container">
+            <div class="sponsor-info-summary">
+                <div class="sponsor-info-left">
+                    <h2>Description/Information</h2>
+                    <p>Name, UserID</p>
+                    <p>Age, Gender, Race, Status, Telphone</p>
+                    <p>Dialysis Schedule</p>
+                    <p>Location</p>
+                </div>
+
+                <div class="sponsor-info-right">
+                    <!-- Where the profile picture and icons go -->
+                    <div class="sponsor-info-profile-picture">
+                        <span>
+
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <button class="sponsor-info-summary-collapse-button">
+                <span class="material-symbols-outlined">
+                    more_horiz
+                </span>
+            </button>
+        </div>
+
+        <div class="sponsor-info-overview">
+            <div class="sponsor-info-overview-tabs">
+                <ol>
+                    <li>
+                        <button class="sponsor-info-tab1">
+                            <h3>History - Overview</h3>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sponsor-info-tab2">
+                            <h3>Document - Overview</h3>
+                        </button>
+                    </li>
+                </ol>
+            </div>
+
+
+            <div class="sponsor-info-overview-content">
+                <div class="sponsor-info-overview-page1">
+                    <div class="sponsor-info-search-container">
+                        <div class="sponsor-info-overview-date-input-container">
+                            <input type="text" placeholder="Start Date:" class="sponsor-info-overview-date-input" id="sponsor-info-overview-date-input" data-date-format="DD MMM YYYY" onfocus="this.type='date'" onblur="if(!this.value) this.type='text'">
+                        </div>
+                        <div class="sponsor-info-overview-history-bar">
+                            <div class="sponsor-info-history-bar-search-bar">
+                                <span class="material-symbols-outlined">
+                                    search
+                                </span>
+                                <input type="text" placeholder="Search" class="sponsor-info-overview-search-input" id="sponsor-info-overview-search-input">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <ol class="sponsor-info-overview-entry-list" id="sponsor-info-overview-entry-list"></ol>
+                </div>
+
+
+                <div class="sponsor-info-overview-page2">
+                    <div class="SponsorInfo-DocBar-loading">
+                        <!-- Empty div -->
+                    </div>
+                    <div class="sponsor-info-overview-document-bar">
+                        <button class="sponsor-info-overview-document-bar-upload-button" id="sponsor-info-overview-document-bar-upload-button">
+                            Upload New Document
+                        </button>
+                        <input type="file" id="fileInput" accept=".pdf, .docx, .doc, .xlsx, .xls, image/*" style="display:none;" />
+                        <div class="sponsor-info-document-bar-search-bar">
+                            <span class="material-symbols-outlined">
+                                search
+                            </span>
+                            <input type="text" placeholder="Search By Document Name" id="docSearch" name="docSearch" />
+                        </div>
+                    </div>
+                    <ol class="sponsor-info-overview-document-list">
+                    </ol>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="~/js/SponsorInfo.js" asp-append-version="true"></script>

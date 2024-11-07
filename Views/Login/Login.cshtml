@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Login";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/login.css">
+    <link rel="icon" type="image/png" href="~/rc-icon.ico">
+    <title>Login Page</title>
+
+</head>
+<body class="login_body">
+    <div class="login-container">
+        <form class="login-details" id="accountForm" action="/login" method="post">
+            <div class="login_header_text">Log In to Access Your Account</div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <div class="error-package">
+                    <input type="text" id="accname" name="accname" placeholder="Username" required>
+                    @if (ViewBag.ErrorMessage != null)
+                    {
+                        <div class="error-message">
+                            @ViewBag.ErrorMessage
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-button">Enter</button>
+            <!-- @Html.AntiForgeryToken() -->
+
+        </form>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="logo_container">
+                <img src="~/Image/login/curtin-logo.png" alt="University Logo" class="footer-logo">
+                <img src="~/Image/login/rc-logo.png" alt="Organization Logo" class="footer-logo">
+            </div>
+            <div class="copyright-text">
+                <span>A community knowledge transfer project in collaboration with Miri Red Crescent</span>
+                <span>&copy; 2024 Curtin University Malaysia. All rights reserved.</span>
+            </div>
+        </footer>
+    </div>
+
+    <div class="image-container">
+        <img src="/Image/login/frontpage.png" alt="image" />
+    </div>
+    <script src="~/js/login.js" asp-append-version="true"></script>
+</body>
+</html>
